@@ -11,4 +11,8 @@ FROM scratch
 # Now copy it into our base image.
 FROM gcr.io/distroless/base
 COPY --from=build /go/bin/acme-helper /
-CMD ["/acme-helper", '/well-known']
+
+EXPOSE 80
+
+WORKDIR /well-known # Hack to create the folder :p
+CMD ["/acme-helper", "/well-known"]
