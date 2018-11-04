@@ -33,5 +33,5 @@ func main() {
 		http.Redirect(w, r, redirect_uri, 301)
 	})
 
-	fmt.Println(http.ListenAndServe(":8080", nil))
+	fmt.Println(http.ListenAndServe(":80", nil))
 }
